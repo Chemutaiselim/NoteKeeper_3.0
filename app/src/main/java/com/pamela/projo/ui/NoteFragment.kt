@@ -6,9 +6,11 @@ import android.view.*
 import android.widget.ArrayAdapter
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
+import com.pamela.projo.data.CourseInfo
+import com.pamela.projo.data.NoteInfo
 
 
-    class NoteFragment : Fragment() {
+class NoteFragment : Fragment() {
         private var notePosition = POSITION_NOT_SET
 
         private var _binding: FragmentNoteBinding? = null
