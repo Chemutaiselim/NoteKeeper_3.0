@@ -22,4 +22,6 @@
     <style name="Theme.projo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.projo..PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.projo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -38,4 +38,5 @@
     <string name="note_activity">Edit Note</string>
     <string name="recently_notes">Recently Notes</string>
     <string name="action_reminder">Reminder</string>
+    <string name="title_activity_item_list_notes">MainActivity</string>
 </resources>
