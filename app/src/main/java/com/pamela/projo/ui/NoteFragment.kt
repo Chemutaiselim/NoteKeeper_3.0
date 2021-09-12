@@ -7,7 +7,9 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import com.pamela.projo.data.CourseInfo
+import com.pamela.projo.data.NOTE_POSITION
 import com.pamela.projo.data.NoteInfo
+import com.pamela.projo.data.POSITION_NOT_SET
 
 
 class NoteFragment : Fragment() {
