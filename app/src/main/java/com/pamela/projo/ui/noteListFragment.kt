@@ -1,10 +1,13 @@
 package com.pamela.projo.ui
 
+import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import com.pamela.projo.data.dataManager
 
 class noteListFragment : Fragment() {
 
@@ -32,8 +35,8 @@ class noteListFragment : Fragment() {
 
         binding.listNotes.adapter = ArrayAdapter(
             requireContext(),
-            android.R.layout.simple_list_item_1,
-            DataManager.notes
+            R.layout.simple_list_item_1,
+            dataManager.notes
         )
         binding.listNotes.setOnItemClickListener { _, _, p3, _ ->
             val action = NoteListFragmentDirections.actionNoteListFragmentToNoteFragment(p3)

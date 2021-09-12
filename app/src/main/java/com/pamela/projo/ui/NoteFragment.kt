@@ -6,10 +6,7 @@ import android.view.*
 import android.widget.ArrayAdapter
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
-import com.pamela.projo.data.CourseInfo
-import com.pamela.projo.data.NOTE_POSITION
-import com.pamela.projo.data.NoteInfo
-import com.pamela.projo.data.POSITION_NOT_SET
+import com.pamela.projo.data.*
 
 
 class NoteFragment : Fragment() {
@@ -38,7 +35,7 @@ class NoteFragment : Fragment() {
             val adapterCourses = ArrayAdapter(
                 requireContext(),
                 R.layout.simple_spinner_item,
-                DataManager.courses.values.toList()
+                dataManager.courses.values.toList()
             )
             // Specify the layout to use when the list of choices appears
             adapterCourses.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -51,8 +48,8 @@ class NoteFragment : Fragment() {
             if (notePosition != POSITION_NOT_SET)
                 displayNote()
             else {
-                DataManager.notes.add(NoteInfo())
-                notePosition = DataManager.notes.lastIndex
+                dataManager.notes.add(NoteInfo())
+                notePosition = dataManager.notes.lastIndex
             }
         }
 
@@ -62,11 +59,11 @@ class NoteFragment : Fragment() {
         }
 
         private fun displayNote() {
-            val note = DataManager.notes[notePosition]
+            val note = dataManager.notes[notePosition]
             binding.noteTitle.setText(note.title)
             binding.noteText.setText(note.text)
 
-            val coursePosition = DataManager.courses.values.indexOf(note.course)
+            val coursePosition = dataManager.courses.values.indexOf(note.course)
             binding.spinnerCourses.setSelection(coursePosition)
         }
 
@@ -82,7 +79,7 @@ class NoteFragment : Fragment() {
             return when (item.itemId) {
                 R.id.action_settings -> true
                 R.id.action_next -> {
-                    if (notePosition < DataManager.notes.lastIndex)
+                    if (notePosition < dataManager.notes.lastIndex)
                         moveNext()
                     true
                 }
@@ -92,13 +89,13 @@ class NoteFragment : Fragment() {
         }
 
         override fun onPrepareOptionsMenu(menu: Menu) {
-            if (notePosition >= DataManager.notes.lastIndex) {
+            if (notePosition >= dataManager.notes.lastIndex) {
                 val itemMenu = menu.findItem(R.id.action_next)
                 if (itemMenu != null) {
                     itemMenu.icon =
                         AppCompatResources.getDrawable(
                             requireContext().applicationContext,
-                            R.drawable.ic_
+                            R.drawable.ic_baseline_block_24
                         )
                 }
             }
@@ -106,7 +103,7 @@ class NoteFragment : Fragment() {
         }
 
         private fun saveNote() {
-            val note = DataManager.notes[notePosition]
+            val note = dataManager.notes[notePosition]
             note.title = binding.noteTitle.text.toString()
             note.text = binding.noteText.text.toString()
             note.course = binding.spinnerCourses.selectedItem as CourseInfo?
