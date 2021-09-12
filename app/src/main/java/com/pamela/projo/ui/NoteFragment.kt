@@ -98,7 +98,7 @@ class NoteFragment : Fragment() {
                     itemMenu.icon =
                         AppCompatResources.getDrawable(
                             requireContext().applicationContext,
-                            R.drawable.ic_block_24
+                            R.drawable.ic_
                         )
                 }
             }
