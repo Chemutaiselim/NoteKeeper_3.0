@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/NoteListFragment"
-        android:name="com.example.notekeeper.gads2021.ui.NoteListFragment"
+        android:name="com.pamela.projo.ui.noteListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_note_list">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/NoteFragment"
-        android:name="com.example.notekeeper.gads2021.ui.NoteFragment"
+        android:name="com.pamela.projo.ui.NoteFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_note">
         <argument
