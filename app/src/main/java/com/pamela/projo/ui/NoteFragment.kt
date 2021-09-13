@@ -1,12 +1,13 @@
 package com.pamela.projo.ui
 
-import android.R
+import com.pamela.projo.R
 import android.os.Bundle
 import android.view.*
 import android.widget.ArrayAdapter
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import com.pamela.projo.data.*
+import com.pamela.projo.data.FragmentNoteBinding
 
 
 class NoteFragment : Fragment() {
